@@ -1,0 +1,10 @@
+authoritative;
+
+default-lease-time ${DHCPD_DEFAULT_LEASE_TIME};
+max-lease-time ${DHCPD_MAX_LEASE_TIME};
+
+subnet ${DHCPD_SUBNET_ADDRESS} netmask ${DHCPD_SUBNET_NETMASK} {
+  range ${DHCPD_SUBNET_RANGE_START} ${DHCPD_SUBNET_RANGE_END};
+  option routers ${DHCPD_SUBNET_ROUTERS};
+  option domain-name-servers ${DHCPD_SUBNET_DOMAIN_NAME_SERVERS};
+}
