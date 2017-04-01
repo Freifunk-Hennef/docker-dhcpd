@@ -13,7 +13,7 @@ ENV DHCPD_SUBNET_RANGE_END=""
 ENV DHCPD_SUBNET_ROUTERS=""
 ENV DHCPD_SUBNET_DOMAIN_NAME_SERVERS=8.8.8.8
 
-RUN apt-get update && apt-get install -y $INSTALL && \
+RUN apt-get update && apt-get install -y $PACKAGES && \
     apt-get clean && rm -rf /var/lib/apt/lists /tmp/* /var/tmp/*
 
 ADD dhcpd.conf.in /etc/dhcp/dhcpd.conf.in
